@@ -1,0 +1,977 @@
+/* ========================================
+   1. IMPORTACIÓN DE FUENTES
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+
+/* ========================================
+   2. VARIABLES GLOBALES
+======================================== */
+
+:root {
+    --ink: #202a39;
+    --navy: #252d40;
+    --slate: #3e485e;
+    --bluegray: #53677f;
+    --mist: #e8edf1;
+    --paper: #f7f8fa;
+    --white: #fff;
+    --line: #dbe1e7;
+    --muted: #788392;
+    --accent: #a9c1d4;
+    --danger: #b7434e;
+    --shadow: 0 14px 38px rgba(31, 41, 57, .09);
+}
+
+
+/* ========================================
+   3. CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--paper);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--ink);
+    font-family: 'DM Sans', Arial, sans-serif;
+    line-height: 1.55;
+    background: linear-gradient(135deg, #f7f8fa 0%, #edf1f5 100%);
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ========================================
+   4. ENCABEZADO
+======================================== */
+
+.site-header {
+    padding: 17px clamp(20px, 5vw, 72px);
+    background: linear-gradient(115deg, #52667e, #62768d 55%, #465a72);
+    color: var(--white);
+}
+
+.header-frame {
+    min-height: 87px;
+    max-width: 1260px;
+    margin: auto;
+    padding: 12px 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, .62);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 50%;
+    color: #fff;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 29px;
+    font-style: italic;
+    text-shadow: 0 0 12px rgba(228, 241, 255, .8);
+}
+
+.brand strong,
+.brand small {
+    display: block;
+}
+
+.brand strong {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 500;
+    letter-spacing: .02em;
+}
+
+.brand small {
+    margin-top: 1px;
+    color: #e4eaf0;
+    font-size: 12px;
+    letter-spacing: .035em;
+}
+
+.header-caption {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    color: #dce5ed;
+}
+
+
+/* ========================================
+   5. MENÚ DE NAVEGACIÓN
+======================================== */
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: clamp(35px, 10vw, 145px);
+    padding: 0 18px;
+    background: var(--slate);
+    box-shadow: 0 3px 12px #18203019;
+}
+
+.main-nav a {
+    position: relative;
+    padding: 16px 4px 15px;
+    color: #edf1f5;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color .18s;
+}
+
+.main-nav a:hover,
+.main-nav a.is-active {
+    color: #fff;
+}
+
+.main-nav a.is-active {
+    font-weight: 700;
+}
+
+.main-nav a.is-active:after {
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    left: 0;
+    height: 2px;
+    background: #dce8f2;
+    content: '';
+}
+
+
+/* ========================================
+   6. CONTENIDO PRINCIPAL
+======================================== */
+
+.page-shell {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 45px 0 54px;
+    flex: 1;
+}
+
+.page-shell--form {
+    width: min(900px, calc(100% - 40px));
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin: 0 0 24px;
+}
+
+.page-heading h1 {
+    margin: 1px 0 5px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 500;
+    line-height: 1.17;
+    color: var(--navy);
+}
+
+.page-heading p:not(.eyebrow) {
+    margin: 0;
+    color: #697587;
+    font-size: 14px;
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--bluegray);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+
+/* ========================================
+   7. BOTONES
+======================================== */
+
+.button {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .16s, border .16s, transform .16s;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button--primary {
+    background: var(--bluegray);
+    color: #fff;
+}
+
+.button--primary:hover {
+    background: #40546d;
+}
+
+.button--outline {
+    border-color: #c9d3dc;
+    background: #fff;
+    color: var(--navy);
+}
+
+.button--outline:hover {
+    border-color: #8597a9;
+    background: #f5f8fa;
+}
+
+
+/* ========================================
+   8. PANELES GENERALES
+======================================== */
+
+.inventory-panel,
+.product-form {
+    overflow: hidden;
+    border: 1px solid #d9e0e7;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: var(--shadow);
+}
+
+
+/* ========================================
+   9. BARRA DE HERRAMIENTAS
+======================================== */
+
+.panel-toolbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 15px 19px;
+    border-bottom: 1px solid var(--line);
+    background: #fafbfc;
+}
+
+.search-field {
+    width: min(400px, 100%);
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    border: 1px solid #dce2e8;
+    border-radius: 8px;
+    background: #fff;
+    color: #748294;
+}
+
+.search-field > span:not(.visually-hidden) {
+    font-size: 23px;
+    line-height: 1;
+}
+
+.search-field input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+}
+
+.search-field:focus-within {
+    border-color: #8096ad;
+    box-shadow: 0 0 0 3px #8096ad24;
+}
+
+.toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.product-count {
+    color: #778290;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   10. TABLA DE PRODUCTOS
+======================================== */
+
+.table-scroll {
+    overflow-x: auto;
+    padding: 0 19px 13px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 9px;
+    text-align: left;
+    font-size: 13px;
+}
+
+thead th {
+    padding: 12px 13px;
+    background: #30394c;
+    color: #f0f3f7;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .045em;
+}
+
+thead th:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+thead th:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+tbody td {
+    padding: 13px;
+    background: #f4f6f8;
+    vertical-align: middle;
+}
+
+tbody tr td:first-child {
+    border-radius: 6px 0 0 6px;
+    color: #758091;
+}
+
+tbody tr td:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+tbody tr:hover td {
+    background: #edf1f5;
+}
+
+.description-cell {
+    display: block;
+    max-width: 275px;
+    margin-top: 3px;
+    color: #778290;
+    font-size: 11px;
+}
+
+.stock-badge {
+    display: inline-block;
+    min-width: 37px;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: #e5ebf0;
+    color: #3e536a;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.actions-cell {
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   11. BOTONES DE ACCIONES DE LA TABLA
+======================================== */
+
+.button--small {
+    min-height: 31px;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+.button--edit {
+    border-color: #d2dce5;
+    background: #fff;
+    color: #3e536a;
+}
+
+.button--edit:hover {
+    background: #eaf0f4;
+}
+
+.button--delete {
+    margin-left: 5px;
+    border-color: #f0d1d4;
+    background: #fff;
+    color: var(--danger);
+}
+
+.button--delete:hover {
+    background: #fff0f1;
+}
+
+
+/* ========================================
+   12. ESTADO VACÍO
+======================================== */
+
+.empty-state {
+    padding: 48px 15px;
+    text-align: center;
+    color: #6f7b8a;
+}
+
+.empty-state > span {
+    display: block;
+    margin-bottom: 8px;
+    color: #95a4b2;
+    font-size: 32px;
+}
+
+.empty-state strong {
+    color: var(--navy);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.empty-state p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   13. FORMULARIO DE PRODUCTOS
+======================================== */
+
+.product-form {
+    padding: 28px 30px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 19px 22px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field--wide {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+    color: #354154;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.required-mark {
+    color: #b14350;
+}
+
+.optional-label {
+    color: #909aa5;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #d8dfe6;
+    border-radius: 7px;
+    outline: 0;
+    background: #fbfcfd;
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+    transition: border .16s, box-shadow .16s;
+}
+
+.field input {
+    height: 45px;
+}
+
+.field textarea {
+    min-height: 98px;
+    resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: #8296aa;
+    box-shadow: 0 0 0 3px #8296aa24;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: #a0a9b2;
+}
+
+.form-hint {
+    margin: 19px 0 0;
+    color: #778290;
+    font-size: 11px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+    padding-top: 19px;
+    border-top: 1px solid #e7ebef;
+}
+
+.form-actions .button {
+    min-width: 150px;
+}
+
+
+/* ========================================
+   14. MENSAJES Y NOTIFICACIONES
+======================================== */
+
+.notice {
+    margin: 0 0 18px;
+    padding: 12px 15px;
+    border: 1px solid #bfd5c8;
+    border-radius: 8px;
+    background: #edf7f0;
+    color: #315f43;
+    font-size: 13px;
+}
+
+.notice--warning {
+    border-color: #eadbb1;
+    background: #fff9e8;
+    color: #725f2a;
+}
+
+.notice--error {
+    border-color: #ebc6c9;
+    background: #fff1f2;
+    color: #9a343d;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* ========================================
+   15. PÁGINA DE INICIO
+======================================== */
+
+.home-panel {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 34px;
+    align-items: center;
+    padding: clamp(22px, 4vw, 38px);
+}
+
+.home-intro h2 {
+    margin: 5px 0 8px;
+    color: var(--navy);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(23px, 4vw, 34px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.home-intro > p:not(.eyebrow) {
+    max-width: 520px;
+    margin: 0;
+    color: #707c8a;
+    font-size: 14px;
+}
+
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 21px;
+}
+
+
+/* ========================================
+   16. TARJETAS DE ESTADÍSTICAS
+======================================== */
+
+.home-stats {
+    display: grid;
+    gap: 12px;
+}
+
+.stat-card {
+    padding: 19px 20px;
+    border: 1px solid #dbe2e8;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #f8fafb, #edf2f6);
+}
+
+.stat-card span,
+.stat-card strong {
+    display: block;
+}
+
+.stat-card span {
+    color: #718091;
+    font-size: 12px;
+}
+
+.stat-card strong {
+    margin-top: 3px;
+    color: #3f5670;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 33px;
+    font-weight: 500;
+}
+
+
+/* ========================================
+   17. MÓDULOS DISPONIBLES
+======================================== */
+
+.module-section {
+    margin-top: 33px;
+}
+
+.module-section > .eyebrow {
+    margin: 0 0 12px 2px;
+}
+
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.module-card {
+    padding: 20px;
+    border: 1px solid #dbe1e7;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 5px 17px #202a3909;
+}
+
+.module-number {
+    color: #6f849a;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16px;
+}
+
+.module-card h3 {
+    margin: 9px 0 5px;
+    color: #354155;
+    font-size: 14px;
+}
+
+.module-card p {
+    margin: 0;
+    color: #778290;
+    font-size: 12px;
+}
+
+.home-panel + .module-section + .storage-note {
+    margin-top: 15px;
+}
+
+
+/* ========================================
+   18. PIE DE PÁGINA
+======================================== */
+
+.site-footer {
+    padding: 16px;
+    text-align: center;
+    background: #252d40;
+    color: #e4e8ed;
+    font-size: 13px;
+}
+
+.site-footer span {
+    padding: 0 3px;
+    color: #adbdcb;
+}
+
+
+/* ========================================
+   19. ELEMENTOS ACCESIBLES
+======================================== */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+
+/* ========================================
+   20. DISEÑO RESPONSIVE - TABLET
+   Pantallas de hasta 700px
+======================================== */
+
+@media (max-width: 700px) {
+
+    /* Encabezado */
+
+    .site-header {
+        padding: 12px;
+    }
+
+    .header-frame {
+        min-height: 73px;
+        padding: 10px 13px;
+    }
+
+    .brand-mark {
+        width: 39px;
+        height: 39px;
+        font-size: 25px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .brand strong {
+        font-size: 20px;
+    }
+
+    .brand small {
+        font-size: 10px;
+    }
+
+    .header-caption {
+        display: none;
+    }
+
+    /* Navegación */
+
+    .main-nav {
+        gap: clamp(19px, 8vw, 48px);
+    }
+
+    .main-nav a {
+        padding: 14px 0;
+        font-size: 13px;
+    }
+
+    /* Contenido principal */
+
+    .page-shell,
+    .page-shell--form {
+        width: calc(100% - 28px);
+        padding: 32px 0 42px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        margin-bottom: 19px;
+    }
+
+    .page-heading h1 {
+        font-size: 35px;
+    }
+
+    .page-heading p:not(.eyebrow) {
+        max-width: 450px;
+        font-size: 13px;
+    }
+
+    .page-heading > .button {
+        min-height: 39px;
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    /* Barra de herramientas */
+
+    .panel-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 13px;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .toolbar-actions {
+        justify-content: space-between;
+    }
+
+    /* Tabla */
+
+    .table-scroll {
+        padding: 0 12px 10px;
+    }
+
+    table {
+        min-width: 660px;
+    }
+
+    /* Formulario */
+
+    .product-form {
+        padding: 21px 18px;
+    }
+
+    .form-grid {
+        gap: 16px;
+    }
+
+    .form-actions .button {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Página de inicio */
+
+    .home-panel {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 23px;
+    }
+
+    .module-grid {
+        gap: 10px;
+    }
+
+    .module-card {
+        padding: 15px;
+    }
+
+}
+
+
+/* ========================================
+   21. DISEÑO RESPONSIVE - MÓVILES
+   Pantallas de hasta 470px
+======================================== */
+
+@media (max-width: 470px) {
+
+    /* Encabezado */
+
+    .brand strong {
+        font-size: 18px;
+    }
+
+    /* Navegación */
+
+    .main-nav {
+        gap: 23px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
+
+    /* Título de página */
+
+    .page-heading {
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .page-heading > .button {
+        width: 100%;
+    }
+
+    /* Formulario */
+
+    .product-form {
+        padding: 18px 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field--wide {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions .button {
+        width: 100%;
+    }
+
+    /* Barra de herramientas */
+
+    .toolbar-actions {
+        gap: 9px;
+    }
+
+    .toolbar-actions .button {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+
+    /* Módulos */
+
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-actions {
+        flex-direction: column;
+    }
+
+    .home-actions .button {
+        width: 100%;
+    }
+
+}

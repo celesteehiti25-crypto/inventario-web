@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#53677f">
+
+    <title>Inicio | Sistema de Inventario</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Archivo JavaScript -->
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="site-header">
+        <div class="header-frame">
+
+            <a class="brand" href="index.html" aria-current="page">
+                <span class="brand-mark" aria-hidden="true">I</span>
+
+                <span>
+                    <strong>Sistema de Inventario</strong>
+                    <small>Aplicación demostrativa para la Unidad IV</small>
+                </span>
+            </a>
+
+            <span class="header-caption">
+                CONTROL DE EXISTENCIAS
+            </span>
+
+        </div>
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="main-nav" aria-label="Navegación principal">
+
+        <a class="is-active" href="index.html" aria-current="page">
+            Inicio
+        </a>
+
+        <a href="productos.html">
+            Productos
+        </a>
+
+        <a href="agregar.html">
+            Agregar Producto
+        </a>
+
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="page-shell">
+
+        <!-- TÍTULO DE BIENVENIDA -->
+        <section class="page-heading">
+
+            <div>
+                <p class="eyebrow">
+                    APLICACIONES WEB · UNIDAD IV
+                </p>
+
+                <h1>Bienvenido</h1>
+
+                <p>
+                    Consulta y administra los artículos de tu inventario
+                    en un solo lugar.
+                </p>
+            </div>
+
+            <a class="button button--primary" href="productos.html">
+                Ver inventario&nbsp; →
+            </a>
+
+        </section>
+
+        <!-- PANEL PRINCIPAL DEL INVENTARIO -->
+        <section class="inventory-panel home-panel">
+
+            <div class="home-intro">
+
+                <p class="eyebrow">
+                    GESTIÓN DE EXISTENCIAS
+                </p>
+
+                <h2>
+                    Todo tu inventario, bajo control.
+                </h2>
+
+                <p>
+                    Registra productos, actualiza cantidades y exporta
+                    tus datos para tus reportes.
+                </p>
+
+                <!-- BOTONES DE ACCESO -->
+                <div class="home-actions">
+
+                    <a class="button button--primary" href="agregar.html">
+                        ＋ Agregar producto
+                    </a>
+
+                    <a class="button button--outline" href="productos.html">
+                        Administrar productos
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- ESTADÍSTICAS -->
+            <div class="home-stats">
+
+                <div class="stat-card">
+                    <span>Productos registrados</span>
+                    <strong data-home-total>0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Unidades en existencia</span>
+                    <strong data-home-units>0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MÓDULOS DISPONIBLES -->
+        <section class="module-section">
+
+            <p class="eyebrow">
+                MÓDULOS DISPONIBLES
+            </p>
+
+            <div class="module-grid">
+
+                <!-- MÓDULO 1 -->
+                <article class="module-card">
+
+                    <span class="module-number">01</span>
+
+                    <h3>
+                        Visualización de productos
+                    </h3>
+
+                    <p>
+                        Consulta el catálogo y encuentra registros rápidamente.
+                    </p>
+
+                </article>
+
+                <!-- MÓDULO 2 -->
+                <article class="module-card">
+
+                    <span class="module-number">02</span>
+
+                    <h3>
+                        Gestión de productos
+                    </h3>
+
+                    <p>
+                        Registra artículos nuevos, modifica datos y elimina
+                        los que ya no necesitas.
+                    </p>
+
+                </article>
+
+                <!-- MÓDULO 3 -->
+                <article class="module-card">
+
+                    <span class="module-number">03</span>
+
+                    <h3>
+                        Reporte para Excel
+                    </h3>
+
+                    <p>
+                        Descarga una hoja de cálculo con el inventario actualizado.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- AVISO DE ALMACENAMIENTO -->
+        <p class="storage-note">
+            Los registros se conservan en el almacenamiento local
+            de este navegador.
+        </p>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+        Aplicaciones Web <span>—</span> Unidad 4
+    </footer>
+
+</body>
+
+</html>

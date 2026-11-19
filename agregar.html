@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#53677f">
+
+    <title>Agregar producto | Sistema de Inventario</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Archivo JavaScript principal -->
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="site-header">
+
+        <div class="header-frame">
+
+            <a class="brand" href="index.html">
+
+                <span class="brand-mark" aria-hidden="true">
+                    I
+                </span>
+
+                <span>
+                    <strong>Sistema de Inventario</strong>
+                    <small>Aplicación demostrativa para la Unidad IV</small>
+                </span>
+
+            </a>
+
+            <span class="header-caption">
+                CONTROL DE EXISTENCIAS
+            </span>
+
+        </div>
+
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="main-nav" aria-label="Navegación principal">
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="productos.html">
+            Productos
+        </a>
+
+        <a
+            class="is-active"
+            href="agregar.html"
+            aria-current="page">
+            Agregar Producto
+        </a>
+
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="page-shell page-shell--form">
+
+        <!-- TÍTULO DEL FORMULARIO -->
+        <section class="page-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    INVENTARIO · CAPTURA
+                </p>
+
+                <h1 data-form-title>
+                    Registro de producto
+                </h1>
+
+                <p>
+                    Completa los datos del artículo para mantener
+                    actualizado el inventario.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- MENSAJES DEL SISTEMA -->
+        <div
+            class="notice"
+            data-notice
+            role="status"
+            aria-live="polite"
+            hidden>
+        </div>
+
+        <!-- FORMULARIO DE PRODUCTOS -->
+        <form class="product-form" data-product-form>
+
+            <div class="form-grid">
+
+                <!-- NOMBRE DEL PRODUCTO -->
+                <div class="field">
+
+                    <label for="nombre">
+                        Nombre del producto
+                        <span class="required-mark">*</span>
+                    </label>
+
+                    <input
+                        id="nombre"
+                        name="nombre"
+                        type="text"
+                        placeholder="Ej. Cuaderno profesional"
+                        maxlength="100"
+                        autocomplete="off"
+                        required>
+
+                </div>
+
+                <!-- CATEGORÍA DEL PRODUCTO -->
+                <div class="field">
+
+                    <label for="categoria">
+                        Categoría
+                        <span class="required-mark">*</span>
+                    </label>
+
+                    <input
+                        id="categoria"
+                        name="categoria"
+                        type="text"
+                        placeholder="Ej. Papelería"
+                        maxlength="80"
+                        required>
+
+                </div>
+
+                <!-- DESCRIPCIÓN DEL PRODUCTO -->
+                <div class="field field--wide">
+
+                    <label for="descripcion">
+                        Descripción
+                        <span class="optional-label">Opcional</span>
+                    </label>
+
+                    <textarea
+                        id="descripcion"
+                        name="descripcion"
+                        rows="4"
+                        maxlength="500"
+                        placeholder="Detalles adicionales del producto…">
+                    </textarea>
+
+                </div>
+
+                <!-- CANTIDAD EN EXISTENCIA -->
+                <div class="field">
+
+                    <label for="cantidad">
+                        Cantidad en existencia
+                        <span class="required-mark">*</span>
+                    </label>
+
+                    <input
+                        id="cantidad"
+                        name="cantidad"
+                        type="number"
+                        min="0"
+                        step="1"
+                        inputmode="numeric"
+                        placeholder="0"
+                        required>
+
+                </div>
+
+            </div>
+
+            <!-- INDICACIONES DEL FORMULARIO -->
+            <p class="form-hint">
+                Los campos marcados con * son obligatorios.
+                La existencia debe ser un entero igual o mayor que cero.
+            </p>
+
+            <!-- BOTONES DE ACCIÓN -->
+            <div class="form-actions">
+
+                <a
+                    class="button button--outline"
+                    data-cancel-edit
+                    href="productos.html"
+                    hidden>
+                    Cancelar
+                </a>
+
+                <button
+                    class="button button--primary"
+                    type="submit">
+                    Guardar producto
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+
+        Aplicaciones Web <span>—</span> Unidad 4
+
+    </footer>
+
+</body>
+
+</html>

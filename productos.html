@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#53677f">
+
+    <title>Productos | Sistema de Inventario</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Librería para exportar archivos Excel -->
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"
+        onerror="this.dataset.failed='true'">
+    </script>
+
+    <!-- Archivo JavaScript principal -->
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="site-header">
+
+        <div class="header-frame">
+
+            <a class="brand" href="index.html">
+
+                <span class="brand-mark" aria-hidden="true">
+                    I
+                </span>
+
+                <span>
+                    <strong>Sistema de Inventario</strong>
+                    <small>Aplicación demostrativa para la Unidad IV</small>
+                </span>
+
+            </a>
+
+            <span class="header-caption">
+                CONTROL DE EXISTENCIAS
+            </span>
+
+        </div>
+
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="main-nav" aria-label="Navegación principal">
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a class="is-active" href="productos.html" aria-current="page">
+            Productos
+        </a>
+
+        <a href="agregar.html">
+            Agregar Producto
+        </a>
+
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="page-shell">
+
+        <!-- TÍTULO DE LA PÁGINA -->
+        <section class="page-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    INVENTARIO · REGISTRO GENERAL
+                </p>
+
+                <h1>Productos</h1>
+
+                <p>
+                    Administra existencias, actualiza registros y genera tu reporte.
+                </p>
+
+            </div>
+
+            <a class="button button--primary" href="agregar.html">
+                ＋
+                <span>Agregar producto</span>
+            </a>
+
+        </section>
+
+        <!-- MENSAJES DEL SISTEMA -->
+        <div
+            class="notice"
+            data-notice
+            role="status"
+            aria-live="polite"
+            hidden>
+        </div>
+
+        <!-- PANEL DEL INVENTARIO -->
+        <section class="inventory-panel" aria-label="Inventario de productos">
+
+            <!-- BARRA DE HERRAMIENTAS -->
+            <div class="panel-toolbar">
+
+                <!-- BUSCADOR DE PRODUCTOS -->
+                <label class="search-field">
+
+                    <span class="visually-hidden">
+                        Buscar productos
+                    </span>
+
+                    <span aria-hidden="true">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="search"
+                        data-product-search
+                        placeholder="Buscar por nombre o categoría…">
+
+                </label>
+
+                <!-- ACCIONES DE LA TABLA -->
+                <div class="toolbar-actions">
+
+                    <span class="product-count" data-product-count>
+                        0 productos
+                    </span>
+
+                    <button
+                        class="button button--outline"
+                        type="button"
+                        data-export-excel>
+                        ↓ Exportar a Excel
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- TABLA DE PRODUCTOS -->
+            <div class="table-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Existencia</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+
+                    </thead>
+
+                    <!-- Los productos se generan mediante JavaScript -->
+                    <tbody data-product-rows></tbody>
+
+                </table>
+
+            </div>
+
+            <!-- MENSAJE CUANDO NO HAY PRODUCTOS -->
+            <div class="empty-state" data-empty-state hidden>
+
+                <span aria-hidden="true">
+                    ▤
+                </span>
+
+                <strong>
+                    No se encontraron productos
+                </strong>
+
+                <p>
+                    Prueba con otra búsqueda o agrega el primer registro.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- AVISO DE ALMACENAMIENTO -->
+        <p class="storage-note">
+            Tus cambios se guardan en este navegador y dispositivo.
+        </p>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+
+        Aplicaciones Web <span>—</span> Unidad 4
+
+    </footer>
+
+</body>
+
+</html>
